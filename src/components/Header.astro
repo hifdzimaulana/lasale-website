@@ -1,0 +1,97 @@
+---
+const navItems = [
+  { label: 'Home', href: '#hero' },
+  { label: 'About', href: '#about' },
+  { label: 'Moot Court', href: '#mootcourt' },
+  { label: 'Programs', href: '#programs' },
+  { label: 'Publications', href: '#publications' },
+  { label: 'Join Us', href: '#contact' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-cornsilk/95 backdrop-blur-sm border-b border-egyptian/10">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 bg-egyptian rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+          <svg class="w-6 h-6 text-cornsilk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <span class="font-emphasis font-semibold text-egyptian text-lg hidden sm:block">LaSALe FHUI</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden lg:flex items-center gap-8">
+        {navItems.map((item) => (
+          <li>
+            <a 
+              href={item.href}
+              class="text-egyptian/80 hover:text-egyptian font-medium text-sm tracking-wide transition-colors duration-200 relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-0.5 after:bg-canary after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA Button -->
+      <a 
+        href="#contact" 
+        class="hidden lg:inline-flex items-center px-5 py-2.5 bg-canary text-egyptian font-semibold text-sm rounded-lg hover:bg-egyptian hover:text-cornsilk transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+      >
+        Join Now
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 text-egyptian hover:bg-vanilla rounded-lg transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden pb-4">
+      <ul class="flex flex-col gap-2">
+        {navItems.map((item) => (
+          <li>
+            <a 
+              href={item.href}
+              class="block px-3 py-2 text-egyptian font-medium rounded-lg hover:bg-vanilla transition-colors"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+        <li class="pt-2">
+          <a 
+            href="#contact"
+            class="block text-center px-5 py-2.5 bg-canary text-egyptian font-semibold rounded-lg hover:bg-egyptian hover:text-cornsilk transition-colors"
+          >
+            Join Now
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

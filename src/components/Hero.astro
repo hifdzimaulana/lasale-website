@@ -1,0 +1,93 @@
+---
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  <!-- Animated Wave Lines Background -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-b from-cornsilk via-vanilla to-cornsilk"></div>
+    
+    <!-- Wave Lines -->
+    <svg class="absolute top-1/4 left-0 w-[200%] h-32 opacity-20 animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,120 L0,120 Z" fill="none" stroke="#1B3598" stroke-width="2"/>
+    </svg>
+    
+    <svg class="absolute top-1/3 left-0 w-[200%] h-24 opacity-15 animate-wave-reverse" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C200,40 400,60 600,40 C800,20 1000,60 1200,40 L1200,120 L0,120 Z" fill="none" stroke="#1B3598" stroke-width="1.5"/>
+    </svg>
+    
+    <svg class="absolute top-1/2 left-0 w-[200%] h-20 opacity-10 animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0 C150,30 350,50 600,30 C850,10 1050,50 1200,30 L1200,120 L0,120 Z" fill="none" stroke="#1B3598" stroke-width="1"/>
+    </svg>
+
+    <!-- Four-pointed stars - scattered -->
+    <div class="absolute top-20 left-[10%] w-4 h-4 bg-egyptian/30 star-four-points animate-float"></div>
+    <div class="absolute top-32 right-[15%] w-6 h-6 bg-canary/40 star-four-points animate-float" style="animation-delay: 0.5s;"></div>
+    <div class="absolute top-1/2 left-[5%] w-3 h-3 bg-mauve/30 star-four-points animate-float" style="animation-delay: 1s;"></div>
+    <div class="absolute top-40 right-[25%] w-5 h-5 bg-egyptian/20 star-four-points star-blur animate-float" style="animation-delay: 1.5s;"></div>
+    <div class="absolute bottom-40 left-[20%] w-4 h-4 bg-vanilla/50 star-four-points animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-32 right-[10%] w-3 h-3 bg-canary/30 star-four-points animate-float" style="animation-delay: 0.7s;"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-2 bg-vanilla/80 rounded-full mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
+      <span class="w-2 h-2 bg-mauve rounded-full animate-pulse"></span>
+      <span class="text-egyptian/80 font-medium text-sm">Law Student Association for Legal Practice</span>
+    </div>
+
+    <!-- Main Heading with Pinyon Script initial -->
+    <h1 class="fluid-h1 font-bold text-egyptian mb-6 animate-fade-in-up" style="animation-delay: 0.4s;">
+      <span class="font-script text-6xl md:text-8xl lg:text-9xl text-mauve">L</span>aSALe FHUI
+    </h1>
+
+    <!-- Subheading -->
+    <p class="fluid-body text-egyptian/70 max-w-2xl mx-auto mb-8 animate-fade-in-up" style="animation-delay: 0.6s;">
+      Where procedural law meets passionate advocacy. We nurture the next generation of courtroom champions through world-class moot court competitions and innovative legal education.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.8s;">
+      <a 
+        href="#mootcourt" 
+        class="inline-flex items-center px-8 py-4 bg-canary text-egyptian font-emphasis font-semibold text-lg rounded-xl hover:bg-egyptian hover:text-cornsilk transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      >
+        Explore Our Excellence
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+      <a 
+        href="#contact" 
+        class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-egyptian text-egyptian font-emphasis font-semibold text-lg rounded-xl hover:bg-egyptian hover:text-cornsilk transition-all duration-300"
+      >
+        Join Our Community
+      </a>
+    </div>
+
+    <!-- Stats Preview -->
+    <div class="grid grid-cols-3 gap-6 mt-16 max-w-lg mx-auto animate-fade-in-up" style="animation-delay: 1s;">
+      <div class="text-center">
+        <div class="font-emphasis text-3xl md:text-4xl font-bold text-egyptian">50+</div>
+        <div class="text-egyptian/60 text-sm mt-1">Competitions</div>
+      </div>
+      <div class="text-center">
+        <div class="font-emphasis text-3xl md:text-4xl font-bold text-egyptian">15+</div>
+        <div class="text-egyptian/60 text-sm mt-1">Champs Won</div>
+      </div>
+      <div class="text-center">
+        <div class="font-emphasis text-3xl md:text-4xl font-bold text-egyptian">200+</div>
+        <div class="text-egyptian/60 text-sm mt-1">Members</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <a href="#about" class="text-egyptian/40 hover:text-egyptian/60 transition-colors">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </a>
+  </div>
+</section>

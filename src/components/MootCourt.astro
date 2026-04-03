@@ -1,0 +1,95 @@
+---
+const achievements = [
+  { number: "15+", label: "Championships Won", description: "National & International" },
+  { number: "50+", label: "Competitions Joined", description: "Since our founding" },
+  { number: "200+", label: "Active Members", description: "Passionate advocates" },
+  { number: "30+", label: "Partner Institutions", description: "Universities & Law Firms" },
+];
+
+const competitions = [
+  { name: "Indonesia Moot Court Competition", year: "2024", result: "Champion" },
+  { name: "Asia Pacific Moot Court Competition", year: "2023", result: "Finalist" },
+  { name: "National Moot Court Championship", year: "2023", result: "Champion" },
+  { name: "UI Faculty Moot Court League", year: "2024", result: "Multiple Wins" },
+];
+---
+
+<section id="mootcourt" class="py-20 md:py-32 relative overflow-hidden">
+  <!-- Gradient Background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-egyptian via-[#1e3a7a] to-egyptian"></div>
+  
+  <!-- Animated Elements -->
+  <div class="absolute top-20 left-10 w-32 h-32 bg-canary/10 rounded-full blur-2xl animate-float"></div>
+  <div class="absolute bottom-20 right-10 w-48 h-48 bg-mauve/10 rounded-full blur-2xl animate-float" style="animation-delay: 1s;"></div>
+  
+  <!-- Wave pattern overlay -->
+  <div class="absolute inset-0 opacity-5">
+    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M0 50 Q 25 30 50 50 T 100 50" fill="none" stroke="#FFF9E1" stroke-width="0.5"/>
+      <path d="M0 60 Q 25 40 50 60 T 100 60" fill="none" stroke="#FFF9E1" stroke-width="0.5"/>
+      <path d="M0 70 Q 25 50 50 70 T 100 70" fill="none" stroke="#FFF9E1" stroke-width="0.5"/>
+    </svg>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 fade-in-section">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-canary/20 rounded-full mb-4">
+        <span class="w-1.5 h-1.5 bg-canary rounded-full"></span>
+        <span class="text-canary font-medium text-sm">Our Track Record</span>
+      </div>
+      
+      <h2 class="fluid-h2 font-bold text-cornsilk mb-4">
+        <span class="font-script text-5xl md:text-6xl text-canary">M</span>oot Court Excellence
+      </h2>
+      
+      <p class="text-cornsilk/70 max-w-2xl mx-auto fluid-body">
+        Through rigorous training, strategic mentorship, and relentless dedication, our teams have consistently outperformed in the most prestigious moot court competitions across Indonesia and the Asia Pacific.
+      </p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
+      {achievements.map((stat, index) => (
+        <div class="fade-in-section text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-canary/30 transition-all duration-300 hover:transform hover:scale-105" style={`animation-delay: ${index * 0.1}s;`}>
+          <div class="font-emphasis text-4xl md:text-5xl font-bold text-canary mb-2">{stat.number}</div>
+          <div class="font-semibold text-cornsilk text-lg mb-1">{stat.label}</div>
+          <div class="text-cornsilk/50 text-sm">{stat.description}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Recent Achievements -->
+    <div class="fade-in-section" style="animation-delay: 0.4s;">
+      <h3 class="font-emphasis text-xl text-cornsilk mb-6 text-center">Recent Achievements</h3>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {competitions.map((comp, index) => (
+          <div class="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-canary/30 transition-all duration-300">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 bg-canary rounded-full"></div>
+              <span class="text-canary text-sm font-medium">{comp.year}</span>
+            </div>
+            <h4 class="text-cornsilk font-semibold text-sm mb-1">{comp.name}</h4>
+            <div class="inline-flex items-center px-2 py-0.5 bg-canary/20 rounded text-canary text-xs font-medium">
+              {comp.result}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 fade-in-section" style="animation-delay: 0.6s;">
+      <a 
+        href="#contact"
+        class="inline-flex items-center px-8 py-4 bg-canary text-egyptian font-emphasis font-semibold text-lg rounded-xl hover:bg-cornsilk hover:shadow-lg transition-all duration-300"
+      >
+        Join Our Next Competition
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cornsilk: #FFF9E1;
+  --color-vanilla: #F8F8AA;
+  --color-canary: #F2F054;
+  --color-mauve: #AB575B;
+  --color-egyptian: #1B3598;
+  
+  --font-heading: "Instrument Sans", sans-serif;
+  --font-emphasis: "Jost", sans-serif;
+  --font-script: "Pinyon Script", cursive;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-heading);
+    background-color: var(--color-cornsilk);
+    color: var(--color-egyptian);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .font-emphasis {
+    font-family: var(--font-emphasis);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+}
+
+@layer utilities {
+  .fluid-h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  
+  .fluid-h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+  
+  .fluid-h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  
+  .fluid-body {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 40px rgba(27, 53, 152, 0.15);
+  }
+
+  .star-four-points {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .star-blur {
+    filter: blur(2px);
+    opacity: 0.6;
+  }
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes waveMoveReverse {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-wave {
+  animation: waveMove 8s linear infinite;
+}
+
+.animate-wave-reverse {
+  animation: waveMoveReverse 8s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

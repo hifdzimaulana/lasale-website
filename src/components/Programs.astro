@@ -1,0 +1,126 @@
+---
+const programs = [
+  {
+    title: "Moot Court Training",
+    description: "Intensive training sessions for competition preparation, covering case analysis, written submissions, and oral advocacy.",
+    icon: "gavel",
+    features: ["Case Analysis", "Written Briefs", "Oral Advocacy", "Mock Trials"],
+    color: "egyptian"
+  },
+  {
+    title: "Legal Writing Workshop",
+    description: "Develop persuasive legal writing skills through workshops on argumentation, citation, and professional drafting.",
+    icon: "pen",
+    features: ["Legal Research", "Brief Writing", "Citation Format", "Feedback Sessions"],
+    color: "mauve"
+  },
+  {
+    title: "Mentorship Program",
+    description: "Connect with experienced alumni and legal professionals for guidance on career development and litigation skills.",
+    icon: "users",
+    features: ["1-on-1 Mentoring", "Career Advice", "Industry Insights", "Networking"],
+    color: "canary"
+  },
+  {
+    title: "Client Interviewing",
+    description: "Learn essential client interaction skills through simulated interviews and case intake exercises.",
+    icon: "message",
+    features: ["Interview Techniques", "Case Assessment", "Ethical Considerations", "Role Play"],
+    color: "vanilla"
+  }
+];
+---
+
+<section id="programs" class="py-20 md:py-32 bg-vanilla/20 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-cornsilk to-transparent"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-canary/10 rounded-full blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 fade-in-section">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-cornsilk rounded-full mb-4">
+        <span class="w-1.5 h-1.5 bg-mauve rounded-full"></span>
+        <span class="text-mauve font-medium text-sm">What We Offer</span>
+      </div>
+      
+      <h2 class="fluid-h2 font-bold text-egyptian mb-4">
+        <span class="font-script text-5xl md:text-6xl text-mauve">P</span>rograms & Activities
+      </h2>
+      
+      <p class="text-egyptian/70 max-w-2xl mx-auto fluid-body">
+        Our comprehensive programs are designed to develop well-rounded legal professionals equipped for the challenges of modern litigation practice.
+      </p>
+    </div>
+
+    <!-- Programs Grid -->
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+      {programs.map((program, index) => (
+        <div 
+          class="fade-in-section group relative bg-cornsilk rounded-2xl p-6 lg:p-8 border border-egyptian/10 hover:border-egyptian/30 transition-all duration-500 hover:shadow-xl hover:shadow-egyptian/10 hover:-translate-y-2"
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <!-- Icon -->
+          <div class={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 ${program.color === 'egyptian' ? 'bg-egyptian' : program.color === 'mauve' ? 'bg-mauve' : program.color === 'canary' ? 'bg-canary' : 'bg-vanilla'}`}>
+            {program.icon === 'gavel' && (
+              <svg class={`w-7 h-7 ${program.color === 'egyptian' ? 'text-cornsilk' : program.color === 'canary' ? 'text-egyptian' : 'text-egyptian'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+              </svg>
+            )}
+            {program.icon === 'pen' && (
+              <svg class={`w-7 h-7 ${program.color === 'mauve' ? 'text-cornsilk' : 'text-egyptian'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            )}
+            {program.icon === 'users' && (
+              <svg class="w-7 h-7 text-egyptian" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            )}
+            {program.icon === 'message' && (
+              <svg class="w-7 h-7 text-egyptian" fill="none" stroke="clientWidth" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            )}
+          </div>
+
+          <!-- Content -->
+          <h3 class="font-emphasis text-xl font-bold text-egyptian mb-3 group-hover:text-mauve transition-colors">
+            {program.title}
+          </h3>
+          
+          <p class="text-egyptian/70 mb-6">
+            {program.description}
+          </p>
+
+          <!-- Features -->
+          <div class="flex flex-wrap gap-2">
+            {program.features.map((feature) => (
+              <span class="px-3 py-1 bg-vanilla/50 text-egyptian/70 text-sm rounded-full">
+                {feature}
+              </span>
+            ))}
+          </div>
+
+          <!-- Hover decorative element -->
+          <div class="absolute top-4 right-4 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class={`w-full h-full star-four-points ${program.color === 'egyptian' ? 'bg-egyptian/20' : program.color === 'mauve' ? 'bg-mauve/20' : program.color === 'canary' ? 'bg-canary/40' : 'bg-vanilla'}`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-12 fade-in-section" style="animation-delay: 0.5s;">
+      <a 
+        href="#contact"
+        class="inline-flex items-center px-6 py-3 bg-transparent border-2 border-egyptian text-egyptian font-emphasis font-semibold rounded-xl hover:bg-egyptian hover:text-cornsilk transition-all duration-300"
+      >
+        View All Programs
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
