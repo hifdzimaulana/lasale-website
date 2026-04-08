@@ -1,0 +1,253 @@
+---
+const slides = [
+  {
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80",
+    description: "Our team in action at the Supreme Court",
+    position: "bottom-left"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&q=80",
+    description: "Late night preparation sessions",
+    position: "top-right"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1551893478-d726eaf0442c?w=1920&q=80",
+    description: "Victory celebration at national championship",
+    position: "center-bottom"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80",
+    description: "Mock trial practice with peers",
+    position: "top-left"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1920&q=80",
+    description: "International competition in Singapore",
+    position: "bottom-right"
+  }
+];
+
+const positionClasses = {
+  "bottom-left": "bottom-12 left-12",
+  "top-right": "top-12 right-12",
+  "center-bottom": "bottom-12 left-1/2 -translate-x-1/2 text-center",
+  "top-left": "top-12 left-12",
+  "bottom-right": "bottom-12 right-12"
+};
+
+const totalSlides = 5;
+const totalHeight = totalSlides * 100;
+---
+
+<section id="mootcourt-parallax" class="relative" style={`height: ${totalHeight}vh;`}>
+  <div class="sticky top-0 h-screen overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-mauve/40 via-mauve/50 to-mauve/60 z-20"></div>
+    
+    {slides.map((slide, index) => (
+      <div 
+        class="parallax-slide absolute inset-0"
+        data-index={index}
+        style={`z-index: ${totalSlides - index};`}
+      >
+        <img 
+          src={slide.image} 
+          alt={slide.description}
+          class="parallax-image w-full h-full object-cover"
+          style={index === 0 ? 'opacity: 1; transform: scale(1);' : 'opacity: 0; transform: scale(1.2);'}
+        />
+      </div>
+    ))}
+    
+    {slides.map((slide, index) => (
+      <div 
+        class={`parallax-text absolute ${positionClasses[slide.position as keyof typeof positionClasses]}`}
+        data-index={index}
+        style={`z-index: 30; opacity: ${index === 0 ? 1 : 0};`}
+      >
+        <p class="text-cornsilk text-2xl md:text-3xl font-medium drop-shadow-lg">{slide.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  const totalSlides = 5;
+  const container = document.getElementById('mootcourt-parallax');
+  const slides = document.querySelectorAll('.parallax-slide');
+  const texts = document.querySelectorAll('.parallax-text');
+  
+  let lastScrollY = 0;
+  let scrollDirection = 1;
+  
+  function updateParallax() {
+    if (!container || slides.length === 0) return;
+    
+    const currentScrollY = window.scrollY;
+    scrollDirection = currentScrollY > lastScrollY ? 1 : -1;
+    lastScrollY = currentScrollY;
+    
+    const scrollTop = window.scrollY;
+    const containerTop = container.offsetTop;
+    const viewportHeight = window.innerHeight;
+    const containerHeight = container.offsetHeight;
+    
+    const relativeScroll = scrollTop - containerTop;
+    
+    // First slide - no transition when scrolling up
+    if (relativeScroll <= 0) {
+      slides.forEach((slide, i) => {
+        const el = slide as HTMLElement;
+        const img = el.querySelector('img') as HTMLImageElement;
+        
+        if (i === 0) {
+          img.style.opacity = '1';
+          img.style.transform = 'scale(1)';
+        } else {
+          img.style.opacity = '0';
+          img.style.transform = 'scale(1.2)';
+        }
+      });
+      texts.forEach((text, i) => {
+        (text as HTMLElement).style.opacity = i === 0 ? '1' : '0';
+      });
+      return;
+    }
+    
+    // Last slide - no transition when scrolling down
+    if (relativeScroll >= containerHeight - viewportHeight) {
+      slides.forEach((slide, i) => {
+        const el = slide as HTMLElement;
+        const img = el.querySelector('img') as HTMLImageElement;
+        
+        if (i === totalSlides - 1) {
+          img.style.opacity = '1';
+          img.style.transform = 'scale(1)';
+        } else {
+          img.style.opacity = '0';
+          img.style.transform = 'scale(1.2)';
+        }
+      });
+      texts.forEach((text, i) => {
+        (text as HTMLElement).style.opacity = i === totalSlides - 1 ? '1' : '0';
+      });
+      return;
+    }
+    
+    const maxScroll = containerHeight - viewportHeight;
+    const scrollProgress = relativeScroll / maxScroll;
+    
+    let currentSlideIndex = Math.min(Math.floor(scrollProgress * totalSlides), totalSlides - 1);
+    const nextSlideIndex = Math.min(currentSlideIndex + 1, totalSlides - 1);
+    const slideProgress = (scrollProgress * totalSlides) % 1;
+    
+    if (scrollDirection === 1) {
+      // At last slide - no zoom transition, just show current
+      if (currentSlideIndex === totalSlides - 1) {
+        slides.forEach((slide, i) => {
+          const el = slide as HTMLElement;
+          const img = el.querySelector('img') as HTMLImageElement;
+          
+          if (i === currentSlideIndex) {
+            img.style.opacity = '1';
+            img.style.transform = 'scale(1)';
+          } else {
+            img.style.opacity = '0';
+            img.style.transform = 'scale(1.2)';
+          }
+        });
+        texts.forEach((text, i) => {
+          (text as HTMLElement).style.opacity = i === currentSlideIndex ? '1' : '0';
+        });
+      } else {
+        slides.forEach((slide, i) => {
+          const el = slide as HTMLElement;
+          const img = el.querySelector('img') as HTMLImageElement;
+          
+          if (i === currentSlideIndex) {
+            const scale = 1 + (slideProgress * 0.2);
+            const opacity = 1 - slideProgress;
+            img.style.transform = `scale(${scale})`;
+            img.style.opacity = opacity.toString();
+          } else if (i === nextSlideIndex) {
+            const scale = 1.2 - (slideProgress * 0.2);
+            const opacity = slideProgress;
+            img.style.transform = `scale(${scale})`;
+            img.style.opacity = opacity.toString();
+          } else {
+            img.style.opacity = '0';
+            img.style.transform = 'scale(1.2)';
+          }
+        });
+        
+        texts.forEach((text, i) => {
+          const t = text as HTMLElement;
+          if (i === currentSlideIndex) {
+            t.style.opacity = (1 - slideProgress).toString();
+          } else if (i === nextSlideIndex) {
+            t.style.opacity = slideProgress.toString();
+          } else {
+            t.style.opacity = '0';
+          }
+        });
+      }
+    } else {
+      // At first slide - no zoom transition, just show current
+      if (currentSlideIndex === 0) {
+        slides.forEach((slide, i) => {
+          const el = slide as HTMLElement;
+          const img = el.querySelector('img') as HTMLImageElement;
+          
+          if (i === 0) {
+            img.style.opacity = '1';
+            img.style.transform = 'scale(1)';
+          } else {
+            img.style.opacity = '0';
+            img.style.transform = 'scale(1.2)';
+          }
+        });
+        texts.forEach((text, i) => {
+          (text as HTMLElement).style.opacity = i === 0 ? '1' : '0';
+        });
+      } else {
+        const prevSlideIndex = Math.max(currentSlideIndex - 1, 0);
+        const reversedProgress = 1 - slideProgress;
+        
+        slides.forEach((slide, i) => {
+          const el = slide as HTMLElement;
+          const img = el.querySelector('img') as HTMLImageElement;
+          
+          if (i === prevSlideIndex) {
+            const scale = 1.2 - (reversedProgress * 0.2);
+            const opacity = reversedProgress;
+            img.style.transform = `scale(${scale})`;
+            img.style.opacity = opacity.toString();
+          } else if (i === currentSlideIndex) {
+            const scale = 1 + (reversedProgress * 0.2);
+            const opacity = 1 - reversedProgress;
+            img.style.transform = `scale(${scale})`;
+            img.style.opacity = opacity.toString();
+          } else {
+            img.style.opacity = '0';
+            img.style.transform = 'scale(1.2)';
+          }
+        });
+        
+        texts.forEach((text, i) => {
+          const t = text as HTMLElement;
+          if (i === prevSlideIndex) {
+            t.style.opacity = reversedProgress.toString();
+          } else if (i === currentSlideIndex) {
+            t.style.opacity = (1 - reversedProgress).toString();
+          } else {
+            t.style.opacity = '0';
+          }
+        });
+      }
+    }
+  }
+  
+  window.addEventListener('scroll', updateParallax, { passive: true });
+  window.addEventListener('resize', updateParallax, { passive: true });
+  
+  updateParallax();
+</script>

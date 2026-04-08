@@ -18,5 +18,8 @@
     "@fontsource/pinyon-script": "^5.2.8",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^5.18.1"
-  }
+  },
+  "plugin": [
+    "superpowers@git+https://github.com/obra/superpowers.git"
+    ]
 }

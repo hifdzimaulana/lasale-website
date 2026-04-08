@@ -6,26 +6,71 @@
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <div class="absolute inset-0 bg-gradient-to-b from-cornsilk via-vanilla to-cornsilk"></div>
     
-    <!-- Wave Lines -->
-    <svg class="absolute top-1/4 left-0 w-[200%] h-32 opacity-20 animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,120 L0,120 Z" fill="none" stroke="#1B3598" stroke-width="2"/>
-    </svg>
-    
-    <svg class="absolute top-1/3 left-0 w-[200%] h-24 opacity-15 animate-wave-reverse" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0 C200,40 400,60 600,40 C800,20 1000,60 1200,40 L1200,120 L0,120 Z" fill="none" stroke="#1B3598" stroke-width="1.5"/>
-    </svg>
-    
-    <svg class="absolute top-1/2 left-0 w-[200%] h-20 opacity-10 animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0 C150,30 350,50 600,30 C850,10 1050,50 1200,30 L1200,120 L0,120 Z" fill="none" stroke="#1B3598" stroke-width="1"/>
+    <!-- Wave Lines - centered in vertical middle -->
+    <svg class="absolute top-1/2 left-0 w-[200%] h-[60vh] -translate-y-1/2 opacity-25" viewBox="0 0 2400 60" preserveAspectRatio="none">
+      <!-- 40 lines evenly spaced vertically, centered -->
+      <path d="M0,5 C200,-5 600,15 1200,5 C1800,-5 2200,15 2400,5" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" />
+      <path d="M0,6 C200,-5 600,17 1200,6 C1800,-5 2200,17 2400,6" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -0.5s;" />
+      <path d="M0,7 C200,-5 600,19 1200,7 C1800,-5 2200,19 2400,7" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -1s;" />
+      <path d="M0,8 C200,-5 600,21 1200,8 C1800,-5 2200,21 2400,8" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -1.5s;" />
+      <path d="M0,9 C200,-5 600,23 1200,9 C1800,-5 2200,23 2400,9" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -2s;" />
+      <path d="M0,10 C200,-5 600,25 1200,10 C1800,-5 2200,25 2400,10" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -2.5s;" />
+      <path d="M0,11 C200,-5 600,27 1200,11 C1800,-5 2200,27 2400,11" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -3s;" />
+      <path d="M0,12 C200,-5 600,29 1200,12 C1800,-5 2200,29 2400,12" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -3.5s;" />
+      <path d="M0,13 C200,-5 600,31 1200,13 C1800,-5 2200,31 2400,13" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -4s;" />
+      <path d="M0,14 C200,-5 600,33 1200,14 C1800,-5 2200,33 2400,14" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -4.5s;" />
+      <path d="M0,15 C200,-5 600,35 1200,15 C1800,-5 2200,35 2400,15" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -5s;" />
+      <path d="M0,16 C200,-5 600,37 1200,16 C1800,-5 2200,37 2400,16" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -5.5s;" />
+      <path d="M0,17 C200,-5 600,39 1200,17 C1800,-5 2200,39 2400,17" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -6s;" />
+      <path d="M0,18 C200,-5 600,41 1200,18 C1800,-5 2200,41 2400,18" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -6.5s;" />
+      <path d="M0,19 C200,-5 600,43 1200,19 C1800,-5 2200,43 2400,19" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -7s;" />
+      <path d="M0,20 C200,-5 600,45 1200,20 C1800,-5 2200,45 2400,20" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -7.5s;" />
+      <path d="M0,21 C200,-5 600,47 1200,21 C1800,-5 2200,47 2400,21" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -8s;" />
+      <path d="M0,22 C200,-5 600,49 1200,22 C1800,-5 2200,49 2400,22" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -8.5s;" />
+      <path d="M0,23 C200,-5 600,51 1200,23 C1800,-5 2200,51 2400,23" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -9s;" />
+      <path d="M0,24 C200,-5 600,53 1200,24 C1800,-5 2200,53 2400,24" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -9.5s;" />
+      <path d="M0,25 C200,-5 600,55 1200,25 C1800,-5 2200,55 2400,25" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -10s;" />
+      <path d="M0,26 C200,-5 600,57 1200,26 C1800,-5 2200,57 2400,26" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -10.5s;" />
+      <path d="M0,27 C200,-5 600,59 1200,27 C1800,-5 2200,59 2400,27" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -11s;" />
+      <path d="M0,28 C200,-5 600,61 1200,28 C1800,-5 2200,61 2400,28" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -11.5s;" />
+      <path d="M0,29 C200,-5 600,63 1200,29 C1800,-5 2200,63 2400,29" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -12s;" />
+      <path d="M0,30 C200,-5 600,65 1200,30 C1800,-5 2200,65 2400,30" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -12.5s;" />
+      <path d="M0,31 C200,-5 600,67 1200,31 C1800,-5 2200,67 2400,31" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -13s;" />
+      <path d="M0,32 C200,-5 600,69 1200,32 C1800,-5 2200,69 2400,32" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -13.5s;" />
+      <path d="M0,33 C200,-5 600,71 1200,33 C1800,-5 2200,71 2400,33" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -14s;" />
+      <path d="M0,34 C200,-5 600,73 1200,34 C1800,-5 2200,73 2400,34" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -14.5s;" />
+      <path d="M0,35 C200,-5 600,75 1200,35 C1800,-5 2200,75 2400,35" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -15s;" />
+      <path d="M0,36 C200,-5 600,77 1200,36 C1800,-5 2200,77 2400,36" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -15.5s;" />
+      <path d="M0,37 C200,-5 600,79 1200,37 C1800,-5 2200,79 2400,37" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -16s;" />
+      <path d="M0,38 C200,-5 600,81 1200,38 C1800,-5 2200,81 2400,38" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -16.5s;" />
+      <path d="M0,39 C200,-5 600,83 1200,39 C1800,-5 2200,83 2400,39" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -17s;" />
+      <path d="M0,40 C200,-5 600,85 1200,40 C1800,-5 2200,85 2400,40" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -17.5s;" />
+      <path d="M0,41 C200,-5 600,87 1200,41 C1800,-5 2200,87 2400,41" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -18s;" />
+      <path d="M0,42 C200,-5 600,89 1200,42 C1800,-5 2200,89 2400,42" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -18.5s;" />
+      <path d="M0,43 C200,-5 600,91 1200,43 C1800,-5 2200,91 2400,43" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -19s;" />
+      <path d="M0,44 C200,-5 600,93 1200,44 C1800,-5 2200,93 2400,44" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave-reverse" style="animation-delay: -19.5s;" />
+      <path d="M0,45 C200,-5 600,95 1200,45 C1800,-5 2200,95 2400,45" fill="none" stroke="#5A7DC7" stroke-width="0.15" class="animate-wave" style="animation-delay: -20s;" />
     </svg>
 
-    <!-- Four-pointed stars - scattered -->
-    <div class="absolute top-20 left-[10%] w-4 h-4 bg-egyptian/30 star-four-points animate-float"></div>
-    <div class="absolute top-32 right-[15%] w-6 h-6 bg-canary/40 star-four-points animate-float" style="animation-delay: 0.5s;"></div>
-    <div class="absolute top-1/2 left-[5%] w-3 h-3 bg-mauve/30 star-four-points animate-float" style="animation-delay: 1s;"></div>
-    <div class="absolute top-40 right-[25%] w-5 h-5 bg-egyptian/20 star-four-points star-blur animate-float" style="animation-delay: 1.5s;"></div>
-    <div class="absolute bottom-40 left-[20%] w-4 h-4 bg-vanilla/50 star-four-points animate-float" style="animation-delay: 2s;"></div>
-    <div class="absolute bottom-32 right-[10%] w-3 h-3 bg-canary/30 star-four-points animate-float" style="animation-delay: 0.7s;"></div>
+    <!-- Stars - scattered -->
+    <svg class="absolute top-20 left-[10%] w-4 h-4 text-egyptian/30 animate-float" viewBox="0 0 122.88 122.88" style="animation-delay: 0s;">
+      <path fill="currentColor" d="M62.43,122.88h-1.98c0-16.15-6.04-30.27-18.11-42.34C30.27,68.47,16.16,62.43,0,62.43v-1.98 c16.16,0,30.27-6.04,42.34-18.14C54.41,30.21,60.45,16.1,60.45,0h1.98c0,16.15,6.04,30.27,18.11,42.34 c12.07,12.07,26.18,18.11,42.34,18.11v1.98c-16.15,0-30.27,6.04-42.34,18.11C68.47,92.61,62.43,106.72,62.43,122.88L62.43,122.88z"/>
+    </svg>
+    <svg class="absolute top-32 right-[15%] w-6 h-6 text-canary/40 animate-float" viewBox="0 0 122.88 122.88" style="animation-delay: 0.5s;">
+      <path fill="currentColor" d="M62.43,122.88h-1.98c0-16.15-6.04-30.27-18.11-42.34C30.27,68.47,16.16,62.43,0,62.43v-1.98 c16.16,0,30.27-6.04,42.34-18.14C54.41,30.21,60.45,16.1,60.45,0h1.98c0,16.15,6.04,30.27,18.11,42.34 c12.07,12.07,26.18,18.11,42.34,18.11v1.98c-16.15,0-30.27,6.04-42.34,18.11C68.47,92.61,62.43,106.72,62.43,122.88L62.43,122.88z"/>
+    </svg>
+    <svg class="absolute top-1/2 left-[5%] w-3 h-3 text-mauve/30 animate-float" viewBox="0 0 122.88 122.88" style="animation-delay: 1s;">
+      <path fill="currentColor" d="M62.43,122.88h-1.98c0-16.15-6.04-30.27-18.11-42.34C30.27,68.47,16.16,62.43,0,62.43v-1.98 c16.16,0,30.27-6.04,42.34-18.14C54.41,30.21,60.45,16.1,60.45,0h1.98c0,16.15,6.04,30.27,18.11,42.34 c12.07,12.07,26.18,18.11,42.34,18.11v1.98c-16.15,0-30.27,6.04-42.34,18.11C68.47,92.61,62.43,106.72,62.43,122.88L62.43,122.88z"/>
+    </svg>
+    <svg class="absolute top-40 right-[25%] w-5 h-5 text-egyptian/20 animate-float" viewBox="0 0 122.88 122.88" style="animation-delay: 1.5s;">
+      <path fill="currentColor" d="M62.43,122.88h-1.98c0-16.15-6.04-30.27-18.11-42.34C30.27,68.47,16.16,62.43,0,62.43v-1.98 c16.16,0,30.27-6.04,42.34-18.14C54.41,30.21,60.45,16.1,60.45,0h1.98c0,16.15,6.04,30.27,18.11,42.34 c12.07,12.07,26.18,18.11,42.34,18.11v1.98c-16.15,0-30.27,6.04-42.34,18.11C68.47,92.61,62.43,106.72,62.43,122.88L62.43,122.88z"/>
+    </svg>
+    <svg class="absolute bottom-40 left-[20%] w-4 h-4 text-vanilla/50 animate-float" viewBox="0 0 122.88 122.88" style="animation-delay: 2s;">
+      <path fill="currentColor" d="M62.43,122.88h-1.98c0-16.15-6.04-30.27-18.11-42.34C30.27,68.47,16.16,62.43,0,62.43v-1.98 c16.16,0,30.27-6.04,42.34-18.14C54.41,30.21,60.45,16.1,60.45,0h1.98c0,16.15,6.04,30.27,18.11,42.34 c12.07,12.07,26.18,18.11,42.34,18.11v1.98c-16.15,0-30.27,6.04-42.34,18.11C68.47,92.61,62.43,106.72,62.43,122.88L62.43,122.88z"/>
+    </svg>
+    <svg class="absolute bottom-32 right-[10%] w-3 h-3 text-canary/30 animate-float" viewBox="0 0 122.88 122.88" style="animation-delay: 0.7s;">
+      <path fill="currentColor" d="M62.43,122.88h-1.98c0-16.15-6.04-30.27-18.11-42.34C30.27,68.47,16.16,62.43,0,62.43v-1.98 c16.16,0,30.27-6.04,42.34-18.14C54.41,30.21,60.45,16.1,60.45,0h1.98c0,16.15,6.04,30.27,18.11,42.34 c12.07,12.07,26.18,18.11,42.34,18.11v1.98c-16.15,0-30.27,6.04-42.34,18.11C68.47,92.61,62.43,106.72,62.43,122.88L62.43,122.88z"/>
+    </svg>
   </div>
 
   <!-- Content -->
@@ -61,25 +106,55 @@
         href="#contact" 
         class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-egyptian text-egyptian font-emphasis font-semibold text-lg rounded-xl hover:bg-egyptian hover:text-cornsilk transition-all duration-300"
       >
-        Join Our Community
+        Contact Us
       </a>
     </div>
 
     <!-- Stats Preview -->
     <div class="grid grid-cols-3 gap-6 mt-16 max-w-lg mx-auto animate-fade-in-up" style="animation-delay: 1s;">
       <div class="text-center">
-        <div class="font-emphasis text-3xl md:text-4xl font-bold text-egyptian">50+</div>
+        <div class="font-emphasis text-3xl md:text-4xl font-bold text-egyptian" data-count="50">0+</div>
         <div class="text-egyptian/60 text-sm mt-1">Competitions</div>
       </div>
       <div class="text-center">
-        <div class="font-emphasis text-3xl md:text-4xl font-bold text-egyptian">15+</div>
+        <div class="font-emphasis text-3xl md:text-4xl font-bold text-egyptian" data-count="15">0+</div>
         <div class="text-egyptian/60 text-sm mt-1">Champs Won</div>
       </div>
       <div class="text-center">
-        <div class="font-emphasis text-3xl md:text-4xl font-bold text-egyptian">200+</div>
+        <div class="font-emphasis text-3xl md:text-4xl font-bold text-egyptian" data-count="200">0+</div>
         <div class="text-egyptian/60 text-sm mt-1">Members</div>
       </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('[data-count]');
+        
+        counters.forEach(counter => {
+          const target = parseInt(counter.dataset.count);
+          const duration = 1000;
+          const startTime = performance.now();
+          const suffix = target > 10 ? '+' : '';
+          
+          function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            let progress = elapsed / duration;
+            
+            if (progress >= 1) {
+              counter.textContent = target + suffix;
+              return;
+            }
+            
+            const current = Math.floor(progress * target);
+            counter.textContent = current + suffix;
+            
+            requestAnimationFrame(update);
+          }
+          
+          requestAnimationFrame(update);
+        });
+      });
+    </script>
   </div>
 
   <!-- Scroll indicator -->
